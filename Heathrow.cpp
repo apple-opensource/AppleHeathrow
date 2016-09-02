@@ -919,7 +919,7 @@ void HeathrowInterruptController::clearAllInterrupts(void)
 //				   IOService * nub, int source );
 IOInterruptAction HeathrowInterruptController::getInterruptHandlerAddress(void)
 {
-  return OSMemberFunctionCast(IOInterruptAction, this, &HeathrowInterruptController::handleInterrupt);	// [4091908]
+  return (IOInterruptAction)&HeathrowInterruptController::handleInterrupt;
 }
 
 IOReturn HeathrowInterruptController::handleInterrupt(void * /*refCon*/,
